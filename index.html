@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Origin of Craft | Custom Origami Orders</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #e74c3c;
+            --bg: #f9f9f9;
+            --card-bg: #ffffff;
+            --text: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            border-bottom: 5px solid var(--accent);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .intro h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .form-container {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+        }
+
+        .form-container h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: 1.4rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 2rem;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>The Origin of Craft</h1>
+        <p>Precision Folds. Timeless Art.</p>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Custom Origami Ordering Portal</h2>
+            <p>Fill out the form below to place your request. Our master folders will transform paper into your vision.</p>
+        </section>
+
+        <section class="form-container">
+            <h3>Place Your Order</h3>
+            
+            <!-- REPLACE THE ACTION URL BELOW WITH YOUR FORMSPREE ENDPOINT TO FIX ERROR 405 -->
+            <form action="https://formspree.io/f/xvkkbzqj" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="customer_name" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="customer_email" required placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="model">Origami Design Model</label>
+                    <select id="model" name="origami_model" required>
+                        <option value="" disabled selected>Select a design...</option>
+                        <option value="crane">Classic Paper Crane (Symbol of Peace)</option>
+                        <option value="dragon">Imperial Dragon (Complex)</option>
+                        <option value="lotus">Blooming Lotus Flower</option>
+                        <option value="geometric">Geometric Modular Sculpture</option>
+                        <option value="custom">Completely Custom Concept</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Paper Premium Quality</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="standard" name="paper_type" value="Standard" checked>
+                            <label for="standard">Standard Washi</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="premium" name="paper_type" value="Premium Chiyogami">
+                            <label for="premium">Premium Chiyogami (Patterned)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity Needed</label>
+                    <input type="text" id="quantity" name="quantity" required placeholder="e.g., 1, 50, 100">
+                </div>
+
+                <div class="form-group">
+                    <label for="specifications">Special Instructions / Custom Requests</label>
+                    <textarea id="specifications" name="instructions" rows="4" placeholder="Describe color preferences, sizes, or custom themes..."></textarea>
+                </div>
+
+                <button type="submit">Submit Origami Order</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Origin of Craft. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
